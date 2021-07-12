@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud Functions Tutorial Requests</title>
+    <!-- stylesheets -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div class="not"></div>
+
+    <!-- auth modals -->
+    <!--<div class="auth open">
+      <div class="modal active">
+        <h2>Login</h2>
+        <form class="login">
+          <input type="text" name="email" placeholder="Email">
+          <input type="password" name="password" placeholder="Password">
+          <button>Login</button>
+          <p class="error"></p>
+        </form>
+        <div>No account? <a class="switch">Register instead</a></div>
+      </div>
+      <div class="modal">
+        <h2>Register</h2>
+        <form class="register">
+          <input type="text" name="email" placeholder="Email">
+          <input type="password" name="password" placeholder="Password">
+          <button>Register</button>
+          <p class="error"></p>
+        </form>
+        <div>Got an account? <a class="switch">Login instead</a></div>
+      </div>
+    </div>-->
+
+    <!-- new request modal -->
+    <div class="new-request">
+      <div class="modal">
+        <h2>Request a Tutorial</h2>
+        <form>
+          <input type="text" name="request" placeholder="Request...">
+          <button>Submit Request</button>
+          <p class="error"></p>
+        </form>
+      </div>
+    </div>
+
+    <header>
+      <nav>
+        <a class="home" href="./index.html" target="_self">HOME</a>
+        <a class="add-request">ADD REQUEST</a>
+      </nav>
+    </header>
+
+    <section class="content" id="app">
+      <h1>Tutorial Requests</h1>
+      <ul class="request-list"> 
+        <li v-for="request in requests">
+          <span class="text">{{ request.text }}</span>
+          <div>
+            <span class="votes">{{ request.upvotes }}</span>
+            <i class="material-icons upvote" v-on:click="upvoteRequest(request.id)">arrow_upward</i>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Esta Aplicação Web foi desenvolvida para a Unidade Curricular Projeto pela aluna Inês Santos do curso Informática Web</p>
+    </footer>
+
+    <!-- vue js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-functions.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCor4TBoc2hEIdAlAZ25fA_ln5rSrolYO0",
+        authDomain: "projetoteste-bf682.firebaseapp.com",
+        projectId: "projetoteste-bf682",
+        storageBucket: "projetoteste-bf682.appspot.com",
+        messagingSenderId: "125786565080",
+        appId: "1:125786565080:web:a9da53b67854c556932aad"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+        
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/requests.js"></script>
+    
+  </body>
+</html>

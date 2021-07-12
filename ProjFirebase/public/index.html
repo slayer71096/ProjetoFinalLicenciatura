@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud Functions Tutorial Requests</title>
+    <!-- stylesheets -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div class="not"></div>
+
+    <!-- auth modals -->
+    <div class="auth open">
+      <div class="modal active">
+        <h2>Login</h2>
+        <form class="login">
+          <input type="text" name="email" placeholder="Email">
+          <input type="password" name="password" placeholder="Password">
+          <button>Login</button>
+          <p class="error"></p>
+        </form>
+        <div>No account? <a class="switch">Register instead</a></div>
+      </div>
+      <div class="modal">
+        <h2>Register</h2>
+        <form class="register">
+          <input type="text" name="email" placeholder="Email">
+          <input type="password" name="password" placeholder="Password">
+          <button>Register</button>
+          <p class="error"></p>
+        </form>
+        <div>Got an account? <a class="switch">Login instead</a></div>
+      </div>
+    </div>
+
+    <!-- new request modal -->
+    <div class="new-request">
+      <div class="modal">
+        <h2>Request a Tutorial</h2>
+        <form>
+          <input type="text" name="request" placeholder="Request...">
+          <button>Submit Request</button>
+          <p class="error"></p>
+        </form>
+      </div>
+    </div>
+
+    <header>
+      <nav>
+        <a class="add-request">ADD REQUEST</a>
+        <a class="request-list" href="./requestList.html" target="_self">REQUEST LIST</a>
+        <a class="sign-out">SIGN OUT</a>
+      </nav>
+    </header>
+
+    <section>
+      <!--<center><img src="./imagens/banner.png" style="width: 80%;"></center>-->
+      <center>
+        <img src="./imagens/banner.png" usemap="#image-map">
+
+        <map name="image-map">
+          <area target="_blank" alt="CSS" title="CSS" href="https://www.udemy.com/courses/search/?price=price-free&amp;q=css&amp;sort=relevance&amp;src=ukw" coords="665,103,774,166" shape="rect">
+          <area target="_blank" alt="JavaScript" title="JavaScript" href="https://www.udemy.com/courses/search/?price=price-free&amp;q=javascript&amp;sort=relevance&amp;src=ukw" coords="948,96,1151,144" shape="rect">
+          <area target="_blank" alt="HTML" title="HTML" href="https://www.udemy.com/courses/search/?price=price-free&amp;q=html&amp;sort=relevance&amp;src=ukw" coords="636,251,739,292" shape="rect">
+          <area target="_blank" alt="HTML" title="HTML" href="https://www.udemy.com/courses/search/?price=price-free&amp;q=html&amp;sort=relevance&amp;src=ukw" coords="1077,337,1158,378" shape="rect">
+          <area target="_blank" alt="Firebase" title="Firebase" href="https://www.udemy.com/courses/search/?price=price-free&amp;q=firebase&amp;sort=relevance&amp;src=ukw" coords="674,426,848,487" shape="rect">
+        </map>
+      </center>
+    </section>
+
+    <footer>
+      <p>Esta Aplicação Web foi desenvolvida para a Unidade Curricular Projeto pela aluna Inês Santos do curso Informática Web</p>
+    </footer>
+
+    
+    <!-- vue js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-functions.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCor4TBoc2hEIdAlAZ25fA_ln5rSrolYO0",
+        authDomain: "projetoteste-bf682.firebaseapp.com",
+        projectId: "projetoteste-bf682",
+        storageBucket: "projetoteste-bf682.appspot.com",
+        messagingSenderId: "125786565080",
+        appId: "1:125786565080:web:a9da53b67854c556932aad"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+        
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/requests.js"></script>
+
+    
+    
+  </body>
+</html>
